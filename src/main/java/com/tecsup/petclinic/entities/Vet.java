@@ -1,5 +1,6 @@
 package com.tecsup.petclinic.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +26,7 @@ public class Vet {
 
 	@Column(name = "last_name")
 	private String lastName;
-
+    @JsonIgnore
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(
 			name = "vet_specialties",
